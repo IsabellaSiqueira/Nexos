@@ -24,37 +24,68 @@
       theme: {
         extend: {
           colors: {
-            'gray-950': '#0a0a0a', // Mantenho a cor que estava no corpo para garantir a consistência
+            'gray-950': '#0a0a0a',
           }
         }
       }
     }
   </script>
+
+  <style>
+    /* Aumentei o padding-top para compensar o novo layout da navbar */
+    body {
+      padding-top: 80px;
+    }
+
+    /* Classe para garantir que os links ocupem espaço uniformemente */
+    .navbar-link-container {
+      flex: 1;
+      max-width: 320px;
+      /* Limita a largura dos links em telas grandes, se necessário */
+      display: flex;
+      justify-content: space-around;
+      /* Distribui o espaço entre os links */
+      align-items: flex-end;
+      /* Alinha o conteúdo dos links no rodapé */
+    }
+  </style>
+
 </head>
 
 <body class="bg-gray-950">
 
-  <div
-    class="relative flex h-auto min-h-screen w-full flex-col dark justify-between group/design-root overflow-x-hidden">
+  <div class="relative flex h-auto min-h-screen w-full flex-col dark justify-between group/design-root overflow-x-hidden">
+<div id="navbar-header"
+  class="fixed top-0 left-0 right-0 z-50 flex items-center justify-center border-b border-slate-700 bg-slate-900 px-4 py-3 shadow-lg">
+
+  <div class="flex items-center justify-center gap-12">
+
+    <a class="flex items-center text-white transition duration-300 hover:opacity-80" href="#home">
+      <img src="./logo.png" alt="Nexos Logo" class="h-8">
+    </a>
+
+    <a class="flex items-center text-blue-300 transition duration-300 hover:text-white h-full" href="#missao">
+      <p class="text-blue-300 text-sm font-medium leading-normal tracking-[0.015em]">Missão</p>
+    </a>
+
+    <a class="flex items-center text-blue-300 transition duration-300 hover:text-white h-full" href="#ia">
+      <p class="text-blue-300 text-sm font-medium leading-normal tracking-[0.015em]">IA</p>
+    </a>
+
+    <a class="flex items-center text-blue-300 transition duration-300 hover:text-white h-full" href="#time">
+      <p class="text-blue-300 text-sm font-medium leading-normal tracking-[0.015em]">Nosso Time</p>
+    </a>
+  </div>
+</div>
+
 
     <div>
 
-      <div class="flex items-center bg-gray-950 p-4 pb-2 justify-between">
-        <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pl-12">Nexos
-          AutoEquity</h2>
-        <div class="flex w-12 items-center justify-end">
-          <button
-            class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 bg-transparent text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0 transition duration-300 hover:text-gray-300">
-            <i class="fa-solid fa-bars text-white text-2xl"></i>
-          </button>
-        </div>
-      </div>
-
       <div id="home" class="@container">
         <div
-          class="flex min-h-[560px] flex-col gap-8 bg-cover bg-center bg-no-repeat @[480px]:gap-10 @[480px]:rounded-xl items-center justify-center p-6"
+          class="flex min-h-[560px] flex-col gap-8 bg-cover bg-center bg-no-repeat @[480px]:gap-10 @[480px]:rounded-xl items-start justify-center p-6"
           style='background-image: linear-gradient(to bottom, #00377B 0%, #0088FE 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAsJ2yQHdgWjbOraNRlCS-fr49DkAUEuRm6YWYHn84Wc9YrCiMzmsQfyrQwSWGC1TraJSExGZzlGA-djH_Y6wUf_ZZHXMh62XBWDGYSIkJRA9Gifck5-eXqVkYqTq4QhibkLI-SmtNj5PtbUiTG9xOBzYnYx3-Elri1v0Bsg_VpyrrHP95TW3JVwb1qc_rnI6TOAHUKAxxwVlBVrhtqTwVH1Dz6xCCXX1ywI7JPd60_qVJ8fB05ssBOBig5TXP41DT5mag9jfCsV5pu");'>
-          <div class="flex flex-col gap-4 text-center">
+          <div class="flex flex-col gap-4 text-start">
             <h1
               class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
               Estudo de Caso: Otimização de UX
@@ -68,7 +99,7 @@
           </div>
           <button
             class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-blue-500 text-white text-base font-bold leading-normal tracking-[0.015em] border border-white transition duration-300 hover:bg-blue-600 hover:scale-[1.03]">
-            <span class="truncate">Ver Missão Completa</span>
+            <span class="truncate">Ver Projeto</span>
           </button>
         </div>
       </div>
@@ -77,7 +108,7 @@
         <div class="flex flex-col gap-5">
           <h1
             class="text-white tracking-light text-[36px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">
-            Nossa Missão: Otimizar a Usabilidade
+            Nossa missão era otimizar a usabilidade
           </h1>
           <p class="text-white text-lg font-normal leading-relaxed max-w-[720px]">
             Melhorar a usabilidade do aplicativo e oferecer soluções.
@@ -179,7 +210,7 @@
             target="_blank"
             class="flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 hover:scale-[1.05] max-w-sm w-full">
             <i class="fa-brands fa-whatsapp text-2xl"></i>
-            <span>Fale com a Nexos via WhatsApp</span>
+            <span>Teste nosso chatbot</span>
           </a>
         </div>
       </div>
@@ -245,53 +276,6 @@
       </div>
     </div>
 
-    <div id="contato" class="mt-12 bg-blue-900 text-white py-16 px-4 text-center">
-      <h1 class="text-4xl font-black mb-4">Entre em Contato e Vamos Conversar!</h1>
-      <p class="text-lg mb-6">Rede Social @GROUPNEXOS</p>
-      <button
-        class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 hover:scale-[1.03]">
-        Fale Conosco
-      </button>
-    </div>
-
-    <div class="flex gap-2 border-t border-slate-700 bg-slate-900 px-4 pb-4 pt-4">
-      <a class="just flex flex-1 flex-col items-center justify-end gap-1 rounded-full text-white transition duration-300 hover:text-blue-300"
-        href="#home">
-        <div class="text-blue-300 flex h-8 items-center justify-center w-full">
-          <i class="fa-solid fa-house text-2xl"></i>
-        </div>
-        <p class="text-blue-300 text-xs font-medium leading-normal tracking-[0.015em]">Home</p>
-      </a>
-      <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-blue-300 transition duration-300 hover:text-white"
-        href="#missao">
-        <div class="text-blue-300 flex h-8 items-center justify-center w-full">
-          <i class="fa-solid fa-bullseye text-2xl"></i>
-        </div>
-        <p class="text-blue-300 text-xs font-medium leading-normal tracking-[0.015em]">Missão</p>
-      </a>
-      <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-blue-300 transition duration-300 hover:text-white"
-        href="#ia">
-        <div class="text-blue-300 flex h-8 items-center justify-center w-full">
-          <i class="fa-solid fa-robot text-2xl"></i>
-        </div>
-        <p class="text-blue-300 text-xs font-medium leading-normal tracking-[0.015em]">IA</p>
-      </a>
-      <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-blue-300 transition duration-300 hover:text-white"
-        href="#time">
-        <div class="text-blue-300 flex h-8 items-center justify-center w-full">
-          <i class="fa-solid fa-users text-2xl"></i>
-        </div>
-        <p class="text-blue-300 text-xs font-medium leading-normal tracking-[0.015em]">Time</p>
-      </a>
-      <a class="just flex flex-1 flex-col items-center justify-end gap-1 text-blue-300 transition duration-300 hover:text-white"
-        href="#contato">
-        <div class="text-blue-300 flex h-8 items-center justify-center w-full">
-          <i class="fa-solid fa-envelope text-2xl"></i>
-        </div>
-        <p class="text-blue-300 text-xs font-medium leading-normal tracking-[0.015em]">Contato</p>
-      </a>
-    </div>
-    <div class="h-5 bg-slate-900"></div>
   </div>
 </body>
 
